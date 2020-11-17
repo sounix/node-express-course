@@ -1,7 +1,6 @@
 const express = require("express");
-const bodyParser = require("body-parser");
-
 const app = express();
+const bodyParser = require("body-parser");
 
 app.use(bodyParser.json());
 
@@ -29,7 +28,10 @@ app.get("/users/:id", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  const { username, password } = req.body;
+  const username = req.body.username;
+  const password = req.body.password;
+  console.log(username);
+  console.log(password);
 
   const mockUsername = "billyTheKid";
   const mockPassword = "superSecret";
